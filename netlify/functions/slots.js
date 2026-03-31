@@ -89,4 +89,4 @@ export default async function handler(req, context) {
   return json({ error: "Not found" }, 404);
 }
 
-export const config = { path: "/api/slots/*" };
+export const config = { path: ["/api/slots", "/api/slots/*"] };

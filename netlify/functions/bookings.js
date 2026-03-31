@@ -114,4 +114,4 @@ export default async function handler(req, context) {
   return json({ error: "Not found" }, 404);
 }
 
-export const config = { path: "/api/bookings/*" };
+export const config = { path: ["/api/bookings", "/api/bookings/*"] };
