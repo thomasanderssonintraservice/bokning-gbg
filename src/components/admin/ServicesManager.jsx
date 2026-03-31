@@ -41,8 +41,9 @@ export default function ServicesManager({ authHeader }) {
     setSaving(true);
     setError(null);
     try {
-      const url = editing ? `/api/services/${editing}` : "/api/services";
-      const method = editing ? "PUT" : "POST";
+      const isNew = editing === "new";
+      const url = isNew ? "/api/services" : `/api/services/${editing}`;
+      const method = isNew ? "POST" : "PUT";
       const res = await fetch(url, {
         method,
         headers: { "Content-Type": "application/json", ...authHeader },
